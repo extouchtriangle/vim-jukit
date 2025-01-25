@@ -117,10 +117,10 @@ fun! s:add_signs_in_region(lnum_end) abort
 
     let lines = range(line('.'), num_end)
     let sign_list = map(lines, {l, v -> {
-        \ 'buffer': bufnr('%', 1), 
-        \ 'group': 'jukit_textcells', 
-        \ 'name': 'jukit_textcells', 
-        \ 'id': l, 
+        \ 'buffer': bufnr('%', 1),
+        \ 'group': 'jukit_textcells',
+        \ 'name': 'jukit_textcells',
+        \ 'id': l,
         \ 'lnum': v,
         \ 'priority': 1}})
     call sign_placelist(sign_list)
@@ -170,7 +170,7 @@ fun! jukit#highlighting_setup(aupat) abort
 
     if g:jukit_highlight_markers
         if !hlexists('jukit_cellmarker_colors')
-            highlight jukit_cellmarker_colors guifg=#1d615a guibg=#1d615a ctermbg=22 ctermfg=22
+            highlight jukit_cellmarker_colors guifg=#caa5f5 guibg=#caa5f5 ctermbg=22 ctermfg=22
         endif
 
         sign define jukit_cell_markers linehl=jukit_cellmarker_colors
@@ -209,8 +209,8 @@ fun! s:textcell_syn_match() abort
 
     syntax spell default
 
-    exe 'syn match jukit_textcell_quotes /' . s:md_start_pattern . '\|' 
+    exe 'syn match jukit_textcell_quotes /' . s:md_start_pattern . '\|'
         \. s:md_end_pattern . '/ containedin=textcell'
-    exe 'syn region textcell keepend start=/' . s:md_start_pattern . '/ end=/' 
+    exe 'syn region textcell keepend start=/' . s:md_start_pattern . '/ end=/'
         \. s:md_end_pattern . '/ contains=@markdown_cells containedin=ALL'
 endfun
