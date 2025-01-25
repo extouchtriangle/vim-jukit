@@ -170,7 +170,7 @@ fun! jukit#highlighting_setup(aupat) abort
 
     if g:jukit_highlight_markers
         if !hlexists('jukit_cellmarker_colors')
-            highlight jukit_cellmarker_colors guifg=#a4a6d6 guibg=#a4a6d6 ctermbg=22 ctermfg=22
+            highlight jukit_cellmarker_colors guifg=#a380bf guibg=#a380bf ctermbg=22 ctermfg=22
         endif
 
         sign define jukit_cell_markers linehl=jukit_cellmarker_colors
