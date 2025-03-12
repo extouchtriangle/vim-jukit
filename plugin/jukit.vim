@@ -4,7 +4,7 @@
 
 let s:default_layout = {
     \'split': 'horizontal',
-    \'p1': 0.6, 
+    \'p1': 0.6,
     \'val': [
         \'file_content',
         \{
@@ -15,7 +15,7 @@ let s:default_layout = {
     \]
 \}
 
-" jukit 
+" jukit
 let g:jukit_mappings_ext_enabled = get(g:, 'jukit_mappings_ext_enabled', '*')
 let g:jukit_shell_cmd = get(g:, 'jukit_shell_cmd', 'ipython3')
 let g:jukit_layout = get(g:, 'jukit_layout', s:default_layout)
@@ -173,7 +173,7 @@ endif
 call writefile([g:jukit_file_encodings], jukit#util#plugin_path() . '/helpers/.encodings')
 
 """"""""""
-" autocmds 
+" autocmds
 """"""""""
 
 if type(g:jukit_hl_ext_enabled) == 1
@@ -247,7 +247,7 @@ fun! s:set_mappings() abort
 
     " sending code
     if !hasmapto('jukit#send#line', 'n')
-        nnoremap <buffer> <cr> <cmd>call jukit#send#line()<cr>
+        nnoremap <buffer> <leader>j<cr> <cmd>call jukit#send#line()<cr>
     endif
     if !hasmapto('jukit#send#selection', 'v')
         vnoremap <buffer> <cr> <esc><cmd>call jukit#send#selection()<cr>
